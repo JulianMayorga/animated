@@ -25,7 +25,7 @@ function createAnimatedComponent(Component: any): any {
     }
 
     setNativeProps(props) {
-      var didUpdate = ApplyAnimatedValues.current(this.refs[refName], props, this);
+      var didUpdate = ApplyAnimatedValues.current(this[refName], props, this);
       if (didUpdate === false) {
         this.forceUpdate();
       }
@@ -45,7 +45,7 @@ function createAnimatedComponent(Component: any): any {
       // need to re-render it. In this case, we have a fallback that uses
       // forceUpdate.
       var callback = () => {
-        var didUpdate = ApplyAnimatedValues.current(this.refs[refName], this._propsAnimated.__getAnimatedValue(), this);
+        var didUpdate = ApplyAnimatedValues.current(this[refName], this._propsAnimated.__getAnimatedValue(), this);
         if (didUpdate === false) {
           this.forceUpdate();
         }
@@ -75,7 +75,7 @@ function createAnimatedComponent(Component: any): any {
       return (
         <Component
           {...this._propsAnimated.__getValue()}
-          ref={refName}
+          ref={element => this[refName] = element}
         />
       );
     }
