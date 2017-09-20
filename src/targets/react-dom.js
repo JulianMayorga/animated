@@ -21,7 +21,7 @@ function mapTransform(t) {
   // Source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform?v=b
   var transformFunctionsWhoAcceptNumbers = ["translateX", "translateY", "translateZ", "perspective"];
   if (transformFunctionsWhoAcceptNumbers.includes(k) && typeof t[k] === "number") {
-    return k+'('+t[k]+')px';
+    return k+'('+t[k]+'px)';
   }
   return `${k}(${t[k]})`;
 }
