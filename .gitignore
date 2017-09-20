@@ -37,4 +37,4 @@ node_modules
 
 examples/interactive-docs/example.bundle.js
 
-umd/index.js
+umd
