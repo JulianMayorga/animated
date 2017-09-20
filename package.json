@@ -1,6 +1,6 @@
 {
   "name": "animated-umd",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Declarative Animations Library for React and React Native",
   "main": "lib/index.js",
   "files": ["umd"],
