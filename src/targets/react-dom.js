@@ -20,7 +20,7 @@ function mapTransform(t) {
   // Following are transform functions who accept arguments of type <length> or <length-percentage>. These functions won't work if we send them numbers, so we convert those numbers to px.
   // Source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform?v=b
   var transformFunctionsWhoAcceptNumbers = ["translateX", "translateY", "translateZ", "perspective"];
-  if (transformFunctionsWhoAcceptNumbers.includes(k) && typeof t[k] === Number) {
+  if (transformFunctionsWhoAcceptNumbers.includes(k) && typeof t[k] === "number") {
     return k+'('+t[k]+')px';
   }
   return `${k}(${t[k]})`;
